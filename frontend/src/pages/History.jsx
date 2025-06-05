@@ -19,12 +19,11 @@ export default function History() {
     const fetchHistory = async () => {
       try {
         const history = await getHistoryOfUser();
-        console.log("Fetched history:", history);
 
         setMeetings(history);
-        console.log(meetings);
       } catch (error) {
-        console.log("Error in fetching History", error);
+        console.log("Error is fetching history", error);
+        throw error;
       }
     };
     fetchHistory();
@@ -38,34 +37,28 @@ export default function History() {
     const year = date.getFullYear();
 
     return `${day} / ${month} / ${year}`;
-  }
+  };
   return (
     <div>
       <IconButton onClick={() => routeTo("/home")}>
         <HomeIcon />
       </IconButton>
-      {meetings?.map((e, i) => {
-        console.log(e);
+      {meetings?.map((e, i) => (
+        <Card key={i} variant="outlined">
+          <CardContent>
+            <Typography
+              gutterBottom
+              sx={{ color: "text.secondary", fontSize: 14 }}
+            >
+              Code: {e.meetingCode}
+            </Typography>
 
-        return (
-          <>
-            <Card key={i} variant="outlined">
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  sx={{ color: "text.secondary", fontSize: 14 }}
-                >
-                  Code: {e.meetingCode}
-                </Typography>
-
-                <Typography sx={{ color: "text.secondary", mb: 1.5 }}>
-                  Date: {formatDate(e.date)}
-                </Typography>
-              </CardContent>
-            </Card>
-          </>
-        );
-      })}
+            <Typography sx={{ color: "text.secondary", mb: 1.5 }}>
+              Date: {e.date ? formatDate(e.date) : "N/A"}
+            </Typography>
+          </CardContent>
+        </Card>
+      ))}
     </div>
   );
 }

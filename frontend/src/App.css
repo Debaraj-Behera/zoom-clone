@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.LandingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  background: url("/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  
+}
+
+.LandingPageContainer nav {
+  padding-inline: 1.2rem;
+  padding-block: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.LandingPageContainer nav h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.LandingPageContainer nav .navLists {
+  display: flex;
+  gap: 1.6rem;
+  cursor: pointer;
+}
+
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  height: 80vh;
+  align-items: center;
+}
+
+.landingMainContainer > div:nth-child(1) {
+  font-size: 2.2rem;
+}
+
+.landingMainContainer > div:nth-child(2) img {
+  height: 70vh;
+  width: auto;
+}
+
+.btn {
+  background-color: #f78503;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 20px;
+  text-align: center;
+
+}
+.meetContainer {
+  display: flex;
+  padding-inline: 20px;
+  height: 80vh;
+  gap: 10vw;
+  justify-content: center;
+}
+
+
+
+.leftPanel {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+.rightPanel {
+  display: flex;
+  align-items: center;
+}
+
+.rightPanel > img {
+  width: 30vw;
+  height: auto;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .LandingPageContainer nav {
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 1rem;
+    text-align: center;
+  }
+
+  .LandingPageContainer .navHeader h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+
+  .LandingPageContainer nav .navLists {
+    flex-direction: row;
+    gap: 0.8rem;
+    width: 100%;
+    justify-content: center;
+    margin: 0.8rem 0;
+    flex-wrap: wrap;
+  }
+
+  .navLists .btn {
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    text-align: center;
+  }
+
+  .landingMainContainer {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    height: auto;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .landingMainContainer > div:nth-child(1) {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .landingMainContainer > div:nth-child(2) img {
+    height: auto;
+    width: 80vw;
+    max-height: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    background: #f78503;
+    color: white;
+    border: none;
+    border-radius: 6px;
+  }
+
+  .meetContainer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+    padding-inline: 1rem;
+  }
+
+  .rightPanel > img {
+    width: 80vw;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+

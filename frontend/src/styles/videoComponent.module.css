@@ -134,9 +134,14 @@
 
 .conferenceView {
   display: flex;
+  flex-wrap: wrap;
   padding: 10px;
   gap: 10px;
-  top: 400px;
+  justify-content: center;
+  align-content: flex-start;
+  width: 100vw;
+  height: calc(90vh - 80px);
+  overflow-y: auto;
 }
 
 .conferenceView video {

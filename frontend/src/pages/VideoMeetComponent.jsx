@@ -47,8 +47,6 @@ export default function VideoMeetComponent() {
   const videoRef = useRef();
   let routeTo = useNavigate();
 
-  //   if()
-
   const getPermissions = async () => {
     try {
       const videoPermission = await navigator.mediaDevices.getUserMedia({

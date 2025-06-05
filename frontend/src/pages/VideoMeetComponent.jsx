@@ -12,7 +12,7 @@ import ScreenShareIcon from "@mui/icons-material/ScreenShare";
 import StopScreenShareIcon from "@mui/icons-material/StopScreenShare";
 import ChatIcon from "@mui/icons-material/Chat";
 import io from "socket.io-client";
-import styles from "../styles/VideoComponent.module.css";
+import styles from "../styles/videoComponent.module.css";
 import SendIcon from "@mui/icons-material/Send";
 import server from "../environment";
 

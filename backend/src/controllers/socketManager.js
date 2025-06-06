@@ -26,7 +26,7 @@ export const connectToSocket = (server) => {
       timeOnline[socket.id] = new Date();
 
       for (let a = 0; a < connections[path].length; a++) {
-        io.to(connections[path][a]).emit;
+        io.to(connections[path][a]).emit("user-joined", socket.id, connections[path]);
       }
 
       if (messages[path] !== undefined) {
@@ -58,8 +58,8 @@ export const connectToSocket = (server) => {
           messages[matchingRoom] = [];
         }
         messages[matchingRoom].push({
-          data: data,
           sender: sender,
+          data: data,
           "socket-id-sender": socket.id,
         });
         console.log(matchingRoom, sender, data);

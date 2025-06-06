@@ -1,93 +1,277 @@
-.meetVideoContainer{
-    position: relative;
-    height: 100vh;
-    background-color: rgb(1, 4, 48);
+.lobbyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
 }
 
-.meetVideoContainer > .meetUserVideo{
-    position: absolute;
-    bottom: 10vh;
-    height: 25vh;
-    width: auto;
-    left: 20px;
-    border-radius: 1.5rem;
+.lobbyHeader {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
 }
 
-.buttonContainers{
-    position: absolute;
-    width: 100vw;
-    bottom: 0;
-    text-align: center;
+.lobbyForm {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
-.buttonContainers svg{
-    font-size: 2.5rem;
+.lobbyForm .MuiTextField-root {
+  flex: 1;
+  min-width: 200px;
+}
+
+.lobbyForm button {
+  min-width: 120px;
+}
+
+.lobbyVideoWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.lobbyVideo {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .lobbyForm {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lobbyForm button {
+    width: 100%;
+  }
+
+  .lobbyForm .MuiTextField-root {
+    width: 100%;
+  }
+
+  .lobbyVideo {
+    height: 40vh;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+.messageInputWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 5px 10px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.messageInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.sendButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  color: #25d366;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.sendButton:hover {
+  color: #128c7e;
+}
+
+.meetVideoContainer {
+  position: relative;
+  height: 100vh;
+  background: black;
+}
+
+.meetUserVideo {
+  position: absolute;
+  bottom: 10vh;
+  left: 0.5rem;
+  height: 20vh;
+  width: auto;
+  border-radius: 20px;
+}
+
+.buttonContainer {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  text-align: center;
+}
+
+.buttonContainer svg {
+  font-size: 2rem;
 }
 
 .conferenceView {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-    justify-content: center;
-    align-content: flex-start;
-    width: 100vw;
-    height: calc(90vh - 80px); /* Leave space for buttonContainers */
-    overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 10px;
+  justify-content: center;
+  align-content: flex-start;
+  width: 100vw;
+  height: calc(90vh - 80px);
+  overflow-y: auto;
 }
 
-/* Video styling - occupy 45% width for 2 per row */
 .conferenceView video {
-    width: 45%;
-    height: calc((90vh - 100px) / 2 - 10px); /* 2 rows max with gap */
-    min-width: 300px;
-    border-radius: 10px;
-    object-fit: cover;
+  width: 45%;
+  height: calc((90vh - 100px) / 2 - 10px);
+  min-width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
 }
-
-/* Handle 1 video - Full width */
-.conferenceView:has(video:nth-child(1)) video {
-    width: 60%;
-    height: 60vh;
-}
-
-/* For 2 videos - 2 equal columns */
-.conferenceView:has(video:nth-child(2)) video {
-    width: 45%;
-    height: calc(45vh - 10px);
-}
-
-/* For 3-4 videos - 2x2 grid */
-.conferenceView:has(video:nth-child(3)),
-.conferenceView:has(video:nth-child(4)) video {
-    width: 45%;
-    height: calc((90vh - 100px) / 2 - 10px);
-}
-
-/* For more than 4 users - wrap with scroll */
-.conferenceView video:nth-child(n+5) {
-    width: 45%;
-    height: calc((90vh - 100px) / 2 - 10px);
-}
-
 
 .chatRoom {
-    position: absolute;
-    height: 90vh;
-    right: 0;
-    background: white;
-    border-radius: 10px;
-    bottom: 10vh;
-    width: 30vw;
-    padding-inline: 20px;
+  position: absolute;
+  height: 90vh;
+  right: 0;
+  background: white;
+  width: 30vw;
+  border-radius: 10px;
+  padding-inline: 10px;
+  margin: 0.4rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .chatContainer {
-    position: relative;
-    height: 100%;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chattingDisplay {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+  padding-bottom: 70px;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
 }
 
 .chattingArea {
-    position: absolute;
-    bottom: 0;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  background: white;
+  box-sizing: border-box;
+  border-top: 1px solid #ddd;
+}
+
+/* Mobile Chat Panel Styles */
+@media (max-width: 768px) {
+  .chatRoom {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    width: 96vw;
+    height: 40vh;
+    background-color: #fff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .chatContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .chattingDisplay {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem;
+    padding-bottom: 70px;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+  }
+
+  .chattingArea {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 25px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+  }
+
+  .messageInputWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 25px;
+    padding: 0;
+    border: none;
+  }
+
+  .messageInput {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 25px;
+  }
+
+  .sendButton {
+    background: none;
+    border: none;
+    padding: 0 10px;
+    color: #25d366;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .sendButton:hover {
+    color: #128c7e;
+  }
 }

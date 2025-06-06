@@ -3,7 +3,7 @@ import io from "socket.io-client";
 
 import { Badge, Button, IconButton, TextField } from "@mui/material";
 
-import styles from "../styles/VideoComponent.module.css";
+import styles from "../styles/videoComponent.module.css";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import VideocamOffIcon from "@mui/icons-material/VideocamOff";
 import CallEnd from "@mui/icons-material/CallEnd";

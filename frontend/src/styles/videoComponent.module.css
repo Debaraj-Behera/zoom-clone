@@ -47,6 +47,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   object-fit: cover;
+  display: block;
 }
 
 @media (max-width: 600px) {
@@ -89,6 +90,7 @@
   font-size: 1rem;
   padding: 10px;
   border-radius: 25px;
+  background-color: transparent;
 }
 
 .sendButton {
@@ -110,6 +112,8 @@
   position: relative;
   height: 100vh;
   background: black;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .meetUserVideo {
@@ -119,6 +123,9 @@
   height: 20vh;
   width: auto;
   border-radius: 20px;
+  z-index: 1;
+  object-fit: cover;
+  display: block;
 }
 
 .buttonContainer {
@@ -126,6 +133,7 @@
   width: 100vw;
   bottom: 0;
   text-align: center;
+  z-index: 2;
 }
 
 .buttonContainer svg {
@@ -142,6 +150,7 @@
   width: 100vw;
   height: calc(90vh - 80px);
   overflow-y: auto;
+  z-index: 0;
 }
 
 .conferenceView video {
@@ -150,6 +159,7 @@
   min-width: 300px;
   border-radius: 10px;
   object-fit: cover;
+  display: block;
 }
 
 .chatRoom {
@@ -163,6 +173,8 @@
   margin: 0.4rem;
   display: flex;
   flex-direction: column;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
 .chatContainer {
@@ -274,4 +286,13 @@
   .sendButton:hover {
     color: #128c7e;
   }
+}
+
+.remoteVideo {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
 }

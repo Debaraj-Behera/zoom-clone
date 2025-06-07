@@ -587,6 +587,8 @@ export default function VideoMeetComponent() {
                     }
                   }}
                   autoPlay
+                  playsInline
+                  className={styles.remoteVideo}
                 ></video>
               </div>
             ))}
